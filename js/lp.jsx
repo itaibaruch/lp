@@ -277,7 +277,7 @@ export default (props) => {
       
       <Section className="gray">
         <h2 className="text-center" id="sign-up">Sign up</h2>
-        <p>Use these components to capture user data, display a payment dialog and/or send them to your own backend for handling. Of course, you could also just use a Typeform to collect user emails. </p>
+        <p>Please fill your details, and we will contact you back with confermation. </p>
         <SignupInline onSubmit={onSignup}/>
       </Section>
 
