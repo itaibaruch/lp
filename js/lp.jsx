@@ -238,12 +238,17 @@ export default (props) => {
             <b>We want to celebrate the arrival of PHP 7.0,</b> learn more about it, offer a chance to talk with other PHP developers, and enjoy that PHP is still going strong after more than 20 years.
             <br /> 
             <br />
+            <b>What about food and drinks? </b>
+            <br />
+            We will have beers, food and a FREE <b style={{color: "#6160a2"}}>PHP7Rocks</b> T-shirt!
+            <br />
+            <br />
             <b>Venue Sponsor: </b> 
             <br />
             <span style={{fontSize: 30}}>DreamPlex Cowrking Space</span>
             </p>
             <p className="lead">
-              <img src="img/gettingReady.jpg" url="" className="img-responsive m-auto" />
+              <img src="img/shirt-top.jpg" url="" className="img-responsive m-auto" />
             </p>
         </HorizontalSplit>
         <br />

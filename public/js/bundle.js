@@ -20025,6 +20025,21 @@
 	          _react2["default"].createElement(
 	            "b",
 	            null,
+	            "What about food and drinks? "
+	          ),
+	          _react2["default"].createElement("br", null),
+	          "We will have beers, food and a FREE ",
+	          _react2["default"].createElement(
+	            "b",
+	            { style: { color: "#6160a2" } },
+	            "PHP7Rocks"
+	          ),
+	          " T-shirt!",
+	          _react2["default"].createElement("br", null),
+	          _react2["default"].createElement("br", null),
+	          _react2["default"].createElement(
+	            "b",
+	            null,
 	            "Venue Sponsor: "
 	          ),
 	          _react2["default"].createElement("br", null),
@@ -20037,7 +20052,7 @@
 	        _react2["default"].createElement(
 	          "p",
 	          { className: "lead" },
-	          _react2["default"].createElement("img", { src: "img/gettingReady.jpg", url: "", className: "img-responsive m-auto" })
+	          _react2["default"].createElement("img", { src: "img/shirt-top.jpg", url: "", className: "img-responsive m-auto" })
 	        )
 	      ),
 	      _react2["default"].createElement("br", null)
