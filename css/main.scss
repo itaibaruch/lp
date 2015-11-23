@@ -1,0 +1,277 @@
+@import "../node_modules/neal-react/css/base";
+/*
+h1, h2, h3, h4, h5, h6,
+.nav-item a{
+    font-family: 'upheavtt';
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.15rem;
+}
+h4, h5, h6,
+.nav-item a{
+    word-spacing: 0;
+}*/
+.red{
+	color: #f00;
+}
+.neal-section{
+	padding-top: 0;
+}
+h2{
+	padding-top: 5rem;
+}
+.neal-section h2{
+	border-color: transparent;
+}
+
+.m-auto{
+	margin: 0 auto;
+}
+.t-u{
+	text-transform: uppercase;
+}
+
+/*
+	Nav
+ */
+.navbar-fixed-top{
+	background: #fff;
+}
+
+/*
+	Hero
+ */
+.display-1{
+	font-size: 15rem;
+	font-weight: bold;
+}
+
+.neal-hero .hero-text,
+.neal-hero .hero-7{
+	float: none;
+}
+.hero-7{
+	color: #6160a2; /*#7880EF;*/ /*#6160a2;*/
+	font-size: 15rem;
+    background: #ebf1fa;
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+.neal-hero img{
+	max-height: 20rem;
+}
+
+.lead{
+	font-size: 3rem;
+	font-weight: bold;
+	padding-top: 2rem;
+}
+.neal-page .neal-hero p:last-child {
+    
+}
+.neal-image-list li.neal-image-list-item img {
+    max-height: 150px;
+}
+.neal-hero.jumbotron{
+	margin-bottom: 0;
+}
+/*
+	Event
+ */
+.event-des img{
+	max-height: 15rem;
+}
+
+.event-des p.lead{
+	margin: 0;
+	padding: 0;
+}
+
+/*
+	Speakers
+ */
+
+#speakers-sect{
+	background-color: #ebebff;
+	/*background-image: url('/img/bg-speakers.jpg');
+	background-position: center;*/
+}
+.neal-team-member{
+	border-color: transparent;
+}
+.neal-team-member img{
+	border-radius: 50%;
+	width: 20rem;
+	height: 20rem;
+}
+
+.neal-team-member .card-title{
+	padding: 0;
+}
+
+/*
+	Time and place
+ */
+#time-sect{
+    /*background-image: url('/img/bg-time.jpg');
+    background-position: center;
+    color: #fff;*/
+}
+
+/*
+	Map
+ */
+.map-gic {
+    height: 20rem;
+    width: 100%;
+}
+
+/*
+	iniline form
+ */
+select {
+   background: transparent;
+   width: 100% !important;
+   padding: 1rem;
+   font-size: 1rem;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 4rem;
+   -webkit-appearance: none;
+}
+
+.neal-signup-inline #special-radio{
+    /*margin-bottom: 3rem;*/
+}
+.neal-signup-inline #special-radio>span{
+	margin-bottom: .5rem;
+	display: block;
+}
+.neal-signup-inline #special-radio input[type=radio] {
+    /*display: none;*/
+    opacity: 0;
+    width: 0;
+}
+
+.neal-signup-inline #special-radio label.radio-inline:before {
+    content: "";
+    display: inline-block;
+ 
+    width: 100%;
+    height: 3.5rem;
+ 
+    /*margin-right: 10px;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    /*background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
+    
+    background-image: none;
+    border: 0.0625rem solid #ccc;
+}
+
+.neal-signup-inline #special-radio input[type=radio]:checked + label {
+    content: "\2022";
+    color: #f3f3f3;
+    text-align: center;
+    background-color: #7880EF;
+}
+.neal-signup-inline #special-radio input[type=radio]:focus + label {
+	border-color: #66afe9;
+}
+.neal-signup-inline #special-radio label{
+    width: 50%;
+    padding: 0;
+    padding: 0.5rem 0;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    line-height: 2.5;
+    background-color: #fff;
+}
+
+.neal-signup-inline #special-radio  .radio-inline + .radio-inline, 
+.neal-signup-inline #special-radio .checkbox-inline + .checkbox-inline{
+	margin: 0;
+}
+
+.neal-signup-inline select {
+	height: 3.5rem;
+}
+.neal-signup-inline button{
+    padding: 0.8rem;
+}
+
+/*
+	Footer
+ */
+footer.neal-footer{
+	margin: 0;
+	background-color: #6160a2;
+}
+
+footer .img-footer{
+	width: 10rem;
+	height: 10rem;
+	background: #fff;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+footer .img-footer img{
+    
+}
+
+/*Small devices (landscape phones, 34em and up)*/
+@media (min-width: 34em) {
+    .jumbotron{
+    	padding: 10rem;
+    }
+}
+
+ /*Medium devices (tablets, 48em and up)*/
+@media (min-width: 48em) {
+	.jumbotron{
+    	padding: 5rem;
+    }
+    .neal-hero .hero-7{
+	    float: right;
+	    width: 10rem;
+	    height: 10rem;
+	    font-size: 7.5rem;
+	    margin-top: 4rem;
+	}
+	.neal-hero .hero-text{
+		float: left;
+		text-align: left;
+	}
+}
+
+ /*Large devices (desktops, 62em and up)*/
+@media (min-width: 62em) {
+	.jumbotron{
+    	padding: 10rem;
+    }
+	.card-deck-wrapper.neal-team .col-lg-4 {
+	    flex: 0 0 50%;
+	}
+	.neal-hero .hero-7{
+	    float: right;
+	    width: 20rem;
+	    height: 20rem;
+	    font-size: 15rem;
+	    margin-top: 0;
+	}
+}
+
+ /*Extra large devices (large desktops, 75em and up)*/
+@media (min-width: 75em) {
+
+}
