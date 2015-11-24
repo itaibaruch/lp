@@ -10,13 +10,13 @@ import {
   Page,
   PricingPlan, PricingTable,
   Section,
-  SignupModal,
   Stripe
 } from "neal-react";
 import { SignupInline } from "./signup-inline.jsx";
 import { Team, TeamMember } from "./team.jsx";
 import { Navbar, NavItem } from "./navbar.jsx";
 import { Footer, FooterAddress } from "./footer.jsx";
+import { AlertModal } from "./alert-modal.jsx";
 import Map from "./map.jsx";
 import ajax from "./ajax.js";
 
@@ -24,15 +24,6 @@ const brandName = "8 Bit Rockstars";
 const brand = <span></span>;
 const brandEmail = "info@8bitrockr.com";
 const brandImg = "img/logo_w.png";
-
-// const onSignup = ({ name: name, email: email, password: password }) => Stripe.StripeHandler.open({
-//   name: "Stripe Integration Included",
-//   description: "Like this? Donate $5 <3",
-//   panelLabel: "Donate {{amount}}",
-//   email: email,
-//   amount: 500,
-// });
-
 
 const onSignup = ({ name: name, email: email, phone: phone, developer: developer, experience: experience }) => {
 
@@ -46,14 +37,14 @@ const onSignup = ({ name: name, email: email, phone: phone, developer: developer
 
   var url = "https://bs40h9cv2f.execute-api.us-west-2.amazonaws.com/production/sendEmail";
 
-  ajax.get(url, data, function() {});
-  // console.log({
-  //   name: name,
-  //   email: email,
-  //   phone: phone,
-  //   developer: developer,
-  //   experience: experience
-  // });
+  ajax.get(url, data, function() {
+    $('#alert-modal').modal('toggle');
+  });
+
+}
+
+const onClosePopup = () => {
+  window.location.href = "http://8bitrockr.com";
 }
 
 const businessAddress = (
@@ -65,157 +56,6 @@ const businessAddress = (
   </address>
 );
 
-/*const pricingPlan1 = {
-  name: "Personal",
-  description: "Describe your plans with easy-to-use pricing tables. Each plan provides callbacks to handle visitor clicks.",
-  price: "$99",
-  features: {
-    "Describe pricing plans as JSON": true,
-    "Features can be active/inactive": true,
-    "Works on mobile": true,
-    "Custom callbacks": true,
-    "Extra Feature 1": false,
-    "Extra Feature 2": false,
-  },
-  onClick: onSignup,
-};
-
-const pricingPlan2 = Object.assign({}, pricingPlan1, {
-  price: "$499",
-  name: "Startup",
-  features: Object.assign({}, pricingPlan1.features, {
-    "Extrea Feature 1": true,
-  }),
-});
-
-const pricingPlan3 = Object.assign({}, pricingPlan2, {
-  price: "$999",
-  name: "Enterprise",
-  features: Object.assign({}, pricingPlan2.features, {
-    "Extrea Feature 2": true,
-  }),
-});
-
-const sampleCode = `<Page>
-  <Hero><h1>{ Content }</h1></Hero>
-  <Section heading="Hello!">
-    <HorizontalSplit padding="md"> { Content } </HorizontalSplit>
-  </Section>
-  <Section>
-    <Team>
-      <TeamMember name="Link" title="Co-founder" imageUrl="img/link.jpg"> { Description } </TeamMember>
-      <TeamMember name="Yoshi" title="Co-founder" imageUrl="img/yoshi.jpg"> { Description } </TeamMember>
-    </Team>
-  </Section>
-  <Section>
-    <PricingTable>
-      <PricingPlan {... pricingPlan1} />
-      <PricingPlan {... pricingPlan2} />
-      <PricingPlan {... pricingPlan3} />
-    </PricingTable>
-    <SignupInline onSubmit={onSignupCallback}/>
-  </Section>
-</Page>
-`; */
-
-// <Section className="subhero">
-//   <ImageList centered>
-//     <ImageListItem src="img/logo_w.png" url=""/>
-//   </ImageList>
-//   <h3 className="text-center">Powered By 8 Bit Rockstars</h3>
-// </Section>
-
-
-// <ImageListItem src="img/logo_w.png" url=""/>
-// <NavItem><Link to="Home" className="nav-link">Home</Link></NavItem>
-// <NavItem dropdown={true}>
-//   <DropdownToggle>Github</DropdownToggle>
-//   <DropdownMenu>
-//     <a href="https://github.com/dennybritz/neal-react" className="dropdown-item" target="_blank">
-//       Neal React
-//     </a>
-//     <a href="https://github.com/dennybritz/neal-sample" className="dropdown-item" target="_blank">
-//       Sample Page
-//     </a>
-//   </DropdownMenu>
-// </NavItem>
-
-
-// <ImageListItem src="img/press/forbes-logo.png" url="http://forbes.com/"/>
-// <ImageListItem src="img/press/theverge-logo.png" url="http://www.theverge.com/"/>
-// <ImageListItem src="img/press/techcrunch-logo.jpg" url="http://techcrunch.com/"/>
-
-//  <Section>
-//   <HorizontalSplit padding="md">
-//     <div>
-//       <p className="lead">Batteries Included</p>
-//       <p>Neal is based on <a href="http://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4</a> and ships with navbar, hero, footer, sections, horizontal split, pricing tables, customer quotes and other components you need for a landing page. No more repetitive coding! Oh, and its easy to extend.</p>
-//     </div>
-//     <div>
-//       <p className="lead">Third-Party Integrations</p>
-//       <p>External integrations like &nbsp;
-//         <a href="http://www.google.com/analytics/">Google Analytics</a>,&nbsp;
-//         <a href="https://segment.com/">Segment</a>,&nbsp;
-//         <a href="https://stripe.com/">Stripe</a> and&nbsp;
-//         <a href="http://typeform.com">Typeform</a> are included.
-//         No more copying & pasting integration code, all you need is your API keys. We automatically track events when visitors navigate to different parts of your page.</p>
-//     </div>
-//     <div>
-//       <p className="lead">Serverless Deployment</p>
-//       <p>Because you are relying on react.js and third-party integration you don't need a server to host your landing page. Simply upload it to an Amazon S3 bucket, enable website hosting, and it's ready to go!</p>
-//     </div>
-//   </HorizontalSplit>
-// </Section>
-
-
-// <Section className="nopad-bottom">
-//   <Code lang="jsx" block>{sampleCode}</Code>
-// </Section>
-
-// <Section>
-//   <Team>
-//     <TeamMember name="Member 1" title="Co-founder" imageUrl="img/people/grumpycat.jpg">
-//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-//     </TeamMember>
-//     <TeamMember name="Member 2" title="Co-founder" imageUrl="img/people/boo.jpg">
-//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-//     </TeamMember>
-//     <TeamMember name="Member 3" title="Co-founder" imageUrl="img/people/panda.jpg">
-//     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-//     </TeamMember>
-//   </Team>
-// </Section>
-
-// <img src="img/people/boo.jpg" className="img-responsive" url=""/>
-
-// <Section>
-//   <PricingTable>
-//     <PricingPlan {... pricingPlan1} />
-//     <PricingPlan {... pricingPlan2} />
-//     <PricingPlan {... pricingPlan3} />
-//   </PricingTable>
-// </Section>
-
-// <Section>
-//   <CustomerQuotes>
-//     <CustomerQuote name="Paul Graham" title="YC" imageUrl="img/people/paulgraham.jpg">
-//       <p>What I tell founders is not to sweat the business model too much at first. The most important task at first is to build something people want. If you don't do that, it won't matter how clever your business model is.</p>
-//     </CustomerQuote>
-//     <CustomerQuote name="Elon Musk" imageUrl="img/people/elonmusk.jpg">
-//       <p>I came to the conclusion that we should aspire to increase the scope and scale of human consciousness in order to better understand what questions to ask. Really, the only thing that makes sense is to strive for greater collective enlightenment.</p>
-//     </CustomerQuote>
-//     <CustomerQuote name="Reid Hoffman" title="Linkedin" imageUrl="img/people/reidhoffman.jpg">
-//       <p>If you are not embarrassed by the first version of your product, youve launched too late.</p>
-//     </CustomerQuote>
-//   </CustomerQuotes>
-// </Section>
-
-// <SignupModal modalId="signup-modal" onSubmit={onSignup}/>
-// <p>
-//   <a className="btn btn-primary btn-ghost" data-toggle="modal" data-target="#signup-modal">Show Signup modal</a>
-// </p>
-
-// <img src="img/php7.png" url="" className="img-responsive m-auto" />
 
 export default (props) => {
   return (
@@ -299,8 +139,9 @@ export default (props) => {
         <h2 className="text-center" id="sign-up">Sign up</h2>
         <p>Please fill your details, and we will contact you back with confermation. </p>
         <SignupInline onSubmit={onSignup}/>
+        <AlertModal modalId="alert-modal" onSubmit={onClosePopup}/>
       </Section>
-
+      
 
       <Footer brandName={brandName} email={brandEmail} img={brandImg} 
         facebookUrl="http://www.facebook.com"
@@ -314,4 +155,3 @@ export default (props) => {
   );
 };
 
- // onMapClick={ () => {} } markers={[]} onMarkerRightclick={ () => {} } 

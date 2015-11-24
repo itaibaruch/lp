@@ -12,6 +12,9 @@ h4, h5, h6,
 .nav-item a{
     word-spacing: 0;
 }*/
+body.modal-open {
+    padding-right: 15px !important;
+}
 .red{
 	color: #f00;
 }
@@ -210,6 +213,9 @@ select {
     padding: 0.8rem;
 }
 
+.neal-signup-modal .modal-header{
+	background-color: #6160a2;
+}
 /*
 	Footer
  */
