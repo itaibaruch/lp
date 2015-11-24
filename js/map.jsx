@@ -14,10 +14,16 @@ export default class Map extends React.Component {
   componentDidMount(rootNode) {
     var mapOptions = {
         center: this.mapCenterLatLng(),
-        zoom: this.state.initialZoom
+        zoom: this.state.initialZoom,
+        scrollwheel: false
     },
     map = new google.maps.Map(ReactDOM.findDOMNode(this), mapOptions);
-    var marker = new google.maps.Marker({position: this.markerCenterLatLng(), title: 'Dreamplex Project - A beautiful designed coworking space in HCMC Vietnam', map: map, animation: google.maps.Animation.BOUNCE});
+    var marker = new google.maps.Marker({
+      position: this.markerCenterLatLng(), 
+      title: 'Dreamplex Project - A beautiful designed coworking space in HCMC Vietnam', 
+      map: map, 
+      animation: google.maps.Animation.BOUNCE
+    });
 
 
     this.setState({map: map});
