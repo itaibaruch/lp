@@ -182,8 +182,9 @@ select {
     text-align: center;
     background-color: #7880EF;
 }
-.neal-signup-inline #special-radio input[type=radio]:focus + label {
+.neal-signup-inline #special-radio input[type=radio]:focus + label.radio-inline:before {
 	border-color: #66afe9;
+	border-width: 0.2rem;
 }
 .neal-signup-inline #special-radio label{
     width: 49%;

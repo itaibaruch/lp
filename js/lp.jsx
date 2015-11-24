@@ -18,6 +18,7 @@ import { Team, TeamMember } from "./team.jsx";
 import { Navbar, NavItem } from "./navbar.jsx";
 import { Footer, FooterAddress } from "./footer.jsx";
 import Map from "./map.jsx";
+import ajax from "./ajax.js";
 
 const brandName = "8 Bit Rockstars";
 const brand = <span></span>;
@@ -33,13 +34,27 @@ const brandImg = "img/logo_w.png";
 // });
 
 
-const onSignup = ({ name: name, email: email, phone: phone, phpDeveloper: phpDeveloper, expirence: expirence }) => console.log({
-  name: name,
-  email: email,
-  phone: phone,
-  phpDeveloper: phpDeveloper,
-  expirence: expirence
-});
+const onSignup = ({ name: name, email: email, phone: phone, developer: developer, experience: experience }) => {
+
+  var data = {
+    name: name,
+    email: email,
+    phone: phone,
+    developer: developer,
+    experience: experience
+  };
+
+  var url = "https://bs40h9cv2f.execute-api.us-west-2.amazonaws.com/production/sendEmail";
+
+  ajax.get(url, data, function() {});
+  // console.log({
+  //   name: name,
+  //   email: email,
+  //   phone: phone,
+  //   developer: developer,
+  //   experience: experience
+  // });
+}
 
 const businessAddress = (
   <address>
@@ -50,7 +65,7 @@ const businessAddress = (
   </address>
 );
 
-const pricingPlan1 = {
+/*const pricingPlan1 = {
   name: "Personal",
   description: "Describe your plans with easy-to-use pricing tables. Each plan provides callbacks to handle visitor clicks.",
   price: "$99",
@@ -82,14 +97,14 @@ const pricingPlan3 = Object.assign({}, pricingPlan2, {
 });
 
 const sampleCode = `<Page>
-  <Hero><h1>{ /* Content */ }</h1></Hero>
+  <Hero><h1>{ Content }</h1></Hero>
   <Section heading="Hello!">
-    <HorizontalSplit padding="md"> { /* Content */ } </HorizontalSplit>
+    <HorizontalSplit padding="md"> { Content } </HorizontalSplit>
   </Section>
   <Section>
     <Team>
-      <TeamMember name="Link" title="Co-founder" imageUrl="img/link.jpg"> { /* Description */ } </TeamMember>
-      <TeamMember name="Yoshi" title="Co-founder" imageUrl="img/yoshi.jpg"> { /* Description */ } </TeamMember>
+      <TeamMember name="Link" title="Co-founder" imageUrl="img/link.jpg"> { Description } </TeamMember>
+      <TeamMember name="Yoshi" title="Co-founder" imageUrl="img/yoshi.jpg"> { Description } </TeamMember>
     </Team>
   </Section>
   <Section>
@@ -101,7 +116,7 @@ const sampleCode = `<Page>
     <SignupInline onSubmit={onSignupCallback}/>
   </Section>
 </Page>
-`;
+`; */
 
 // <Section className="subhero">
 //   <ImageList centered>

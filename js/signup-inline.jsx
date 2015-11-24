@@ -8,7 +8,7 @@ export class SignupInline extends React.Component {
     onSubmit: React.PropTypes.func,
   }
 
-  state = { name: null , email: null, phone: null, phpDeveloper: null, expirence: 'none'};
+  state = { name: null , email: null, phone: 0, developer: null, experience: 'none'};
 
   handleChange = (e) => {
     this.setState({ [`${e.target.name}`]: e.target.value });
@@ -41,16 +41,16 @@ export class SignupInline extends React.Component {
           
           <Col className="form-group" size={["xs-12", "lg-4"]} id="special-radio">
             <span>Are you a PHP Developer?  <span className="red">*</span></span>
-            <input type="radio" required name="phpDeveloper" id="yes" value="yes" onChange={this.handleChange} />
+            <input type="radio" required name="developer" id="yes" value="yes" onChange={this.handleChange} />
             <label className="radio-inline" htmlFor="yes">Yes</label>
-            <input type="radio" name="phpDeveloper" id="no" value="no" onChange={this.handleChange} />
+            <input type="radio" name="developer" id="no" value="no" onChange={this.handleChange} />
             <label className="radio-inline" htmlFor="no">No</label>
           </Col>
           <Col className="form-group" size={["xs-12", "lg-4"]}>
-            <label htmlFor="expirence">Years Of Expirence:  <span className="red">*</span></label>
-            <select className="form-control" id="expirence" name="expirence" required onChange={this.handleChange} defaultValue="">
+            <label htmlFor="experience">Years Of Experience:  <span className="red">*</span></label>
+            <select className="form-control" id="experience" name="experience" required onChange={this.handleChange} defaultValue="">
               <option value="" disabled>Choose here:</option>
-              <option value="none">No expirence</option>
+              <option value="none">No experience</option>
               <option value="1-2">1-2</option>
               <option value="3-5">3-5</option>
               <option value="6-10">6-10</option>
@@ -69,13 +69,13 @@ export class SignupInline extends React.Component {
 
 // <Col className="form-group" size={["xs-12", "lg-5"]}>
 //   <label>
-//     <input type="radio" name="phpDeveloper" id="optionsRadios1" value="yes">
+//     <input type="radio" name="developer" id="optionsRadios1" value="yes">
 //     Yes
 //   </label>
 // </Col>
 // <Col className="form-group" size={["xs-12", "lg-5"]}>
 //   <label>
-//     <input type="radio" name="phpDeveloper" id="optionsRadios2" value="no">
+//     <input type="radio" name="developer" id="optionsRadios2" value="no">
 //     No
 //   </label>
 // </Col>
