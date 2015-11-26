@@ -14,15 +14,39 @@ export class SignupInline extends React.Component {
     this.setState({ [`${e.target.name}`]: e.target.value });
   }
 
+  
+  hasHtml5Validation = () => {
+    return typeof document.createElement('input').checkValidity === 'function';
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.props.onSubmit) { this.props.onSubmit(this.state); }
+    if (this.hasHtml5Validation()) {
+      if (!e.target.checkValidity()) {
+        e.preventDefault();
+        document.getElementById('errorMessageDiv').style.display = 'block';
+        document.getElementById('errorMessageDiv').className = 'blink';
+        setTimeout(function(){
+          document.getElementById('errorMessageDiv').className = '';
+        }, 3000);
+      } else {
+        document.getElementById('errorMessageDiv').style.display = 'none';
+        if (this.props.onSubmit) { this.props.onSubmit(this.state); }
+      }
+    } 
   }
 
   render() {
+
+    var errorStyle = {
+      display: 'none',
+      color: '#f00',
+      textAlign: 'center'
+    }
+
     return (
       <div className="neal-signup-inline">
-        <form className="form-inline row" onSubmit={this.handleSubmit}>
+        <form id="form" className="form-inline row" onSubmit={this.handleSubmit}>
           <Col className="form-group" size={["xs-12", "lg-4"]}>
             <label className="sr-only" htmlFor="name">Name <span className="red">*</span></label>
             <input type="text" required className="form-control" name="name" placeholder="Name *"
@@ -60,6 +84,9 @@ export class SignupInline extends React.Component {
           <Col className="form-group" size={["xs-12", "lg-4"]}>
             <label style={{minHeight: 18}}></label>
             <button type="submit" className="btn btn-primary btn-ghost">Sign up</button>
+          </Col>
+          <Col className="form-group" size={["xs-12"]}>
+            <div id="errorMessageDiv" style={errorStyle} className="blink" >Please fill all the feilds in the form.</div>
           </Col>
         </form>
       </div>

@@ -216,6 +216,29 @@ select {
 .neal-signup-modal .modal-header{
 	background-color: #6160a2;
 }
+
+.blink {
+  -webkit-animation: blink .5s steps(5, start) infinite;
+  -moz-animation:    blink .5s steps(5, start) infinite;
+  -o-animation:      blink .5s steps(5, start) infinite; 
+  animation:         blink .5s steps(5, start) infinite;
+  -webkit-animation-iteration-count: 3; /* Chrome, Safari, Opera */
+  animation-iteration-count: 3;
+}
+
+@-webkit-keyframes blink {
+  to { visibility: hidden; }
+}
+@-moz-keyframes blink {
+  to { visibility: hidden; }
+}
+@-o-keyframes blink {
+  to { visibility: hidden; }
+}
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
 /*
 	Footer
  */
