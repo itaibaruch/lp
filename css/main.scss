@@ -34,6 +34,9 @@ h2{
 .t-u{
 	text-transform: uppercase;
 }
+.neal-horizontal-split-sm .neal-horizontal-split-col {
+  padding-right: 1rem;
+}
 
 /*
 	Nav
@@ -81,6 +84,7 @@ h2{
 }
 .neal-hero.jumbotron{
 	margin-bottom: 0;
+  padding: 10rem 2rem 2rem;
 }
 /*
 	Event
@@ -264,22 +268,19 @@ footer .img-footer img{
 
 /*Small devices (landscape phones, 34em and up)*/
 @media (min-width: 34em) {
-    .jumbotron{
-    	padding: 10rem;
-    }
+  .jumbotron{
+  	padding: 10rem 5rem 5rem;
+  }
 }
 
  /*Medium devices (tablets, 48em and up)*/
 @media (min-width: 48em) {
-	.jumbotron{
-    	padding: 5rem;
-    }
-    .neal-hero .hero-7{
-	    float: right;
-	    width: 10rem;
-	    height: 10rem;
-	    font-size: 7.5rem;
-	    margin-top: 4rem;
+  .neal-hero .hero-7{
+    float: right;
+    width: 10rem;
+    height: 10rem;
+    font-size: 7.5rem;
+    margin-top: 4rem;
 	}
 	.neal-hero .hero-text{
 		float: left;
@@ -291,7 +292,7 @@ footer .img-footer img{
 @media (min-width: 62em) {
 	.jumbotron{
     	padding: 10rem;
-    }
+  }
 	.card-deck-wrapper.neal-team .col-lg-4 {
 	    flex: 0 0 50%;
 	}

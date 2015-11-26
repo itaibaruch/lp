@@ -72,7 +72,8 @@ export default (props) => {
         <div className="hero-7" >7</div>
         <div className="hero-text">
           <p className="lead"> 
-            PHP 7 celebration<br /> 
+            PHP 7<br />
+            Celebration<br />
             IN VIETNAM
           </p>
           <p>
@@ -98,13 +99,28 @@ export default (props) => {
             We will have beers, food and a FREE <b style={{color: "#6160a2"}}>PHP7Rocks</b> T-shirt!
             <br />
             <br />
-            <b>Venue Sponsor: </b> 
-            <br />
-            <span style={{fontSize: 30}}>DreamPlex Cowrking Space</span>
             </p>
             <p className="lead">
               <img src="img/shirt-top.jpg" url="" className="img-responsive m-auto" />
             </p>
+        </HorizontalSplit>
+        <br />
+      </Section>
+
+      <Section className="event-des">
+        <HorizontalSplit padding="sm">
+          <p>
+            <br />
+            <br />
+            <b>Venue Sponsor: </b> 
+            <br />
+            <span style={{fontSize: 30}}>DreamPlex Cowrking Space</span>
+            <br />
+            <a href="http://www.dreamplex.co" target="_blank">www.dreamplex.co</a>
+          </p>
+          <p className="lead">
+            <img src="img/dreamplex-logo.png" url="" className="img-responsive m-auto" />
+          </p>
         </HorizontalSplit>
         <br />
       </Section>
