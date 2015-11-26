@@ -159,6 +159,9 @@ select {
     /*display: none;*/
     opacity: 0;
     width: 0;
+    clear: none;
+	float: left;
+	margin-right: -100%;
 }
 
 .neal-signup-inline #special-radio label.radio-inline:before {
