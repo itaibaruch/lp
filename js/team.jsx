@@ -43,7 +43,7 @@ export class Team extends React.Component {
           <div className="card-deck">
             {this.props.children.map((member, idx) => {
               return (
-                <Col size={["md-6", "lg-4"]} key={idx}>{member}</Col>
+                <Col size={["xs-12", "md-6", "lg-4"]} key={idx}>{member}</Col>
               );
             })}
           </div>

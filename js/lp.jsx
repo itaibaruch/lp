@@ -114,7 +114,7 @@ export default (props) => {
             <br />
             <b>Venue Sponsor: </b> 
             <br />
-            <span style={{fontSize: 30}}>DreamPlex Cowrking Space</span>
+            <span style={{fontSize: 30}}>DreamPlex Coworking Space</span>
             <br />
             <a href="http://www.dreamplex.co" target="_blank">www.dreamplex.co</a>
           </p>

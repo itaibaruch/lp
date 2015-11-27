@@ -12,6 +12,26 @@ h4, h5, h6,
 .nav-item a{
     word-spacing: 0;
 }*/
+
+/*.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}*/
+
+/*.col-xs-1 {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 8.33%;
+    max-width: 8.33%;
+}*/
+
+.ie-fix{
+	-ms-flex: none !important;
+	flex: none !important;
+    width: 50%;
+    float: left;
+}
+
 body.modal-open {
     padding-right: 15px !important;
 }
@@ -116,10 +136,14 @@ h2{
 	border-radius: 50%;
 	width: 20rem;
 	height: 20rem;
+	margin-top: 2rem;
 }
 
 .neal-team-member .card-title{
 	padding: 0;
+}
+.card-deck .card{
+	background-color: transparent;
 }
 
 /*
@@ -224,6 +248,10 @@ select {
 
 .neal-signup-modal .modal-header{
 	background-color: #6160a2;
+}
+
+.btn.btn-primary.btn-ghost{
+	background-color: transparent;
 }
 
 .blink {

@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<html lang="en">
+   <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cask.scotch.io/bootstrap-4.0.css" />
+
     <title>PHP 7 Celebration</title>
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico"/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <!-- font -->
     <link rel="stylesheet" href="css/upheavtt.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script type="text/javascript">
@@ -29,10 +38,57 @@
           document.querySelector('head').appendChild(msViewportStyle)
         }
       })();
+
+      
     </script>
   </head>
   <body>
-    <main id="main"/>
+    <div id="main" ></div>
+  </body>
+  <!-- jQuery first, then Bootstrap JS. -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   </body>
   <script src="js/bundle.js"></script>
+  <script>
+    $(document).ready(function(){
+         var isAtLeastIE11 = !!(navigator.userAgent.match(/Trident/) && !navigator.userAgent.match(/MSIE/));
+
+          var isIE11 = !!(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv[ :]11/));
+
+          if(isIE11){
+            // console.log('ie11');
+            // var scriptHtml = document.createElement("script");
+            // scriptHtml.type = "text/javascript";
+            // scriptHtml.src = "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js";
+
+            // var scriptRes = document.createElement("script");
+            // scriptRes.type = "text/javascript";
+            // scriptRes.src = "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js";
+
+            // document.head.appendChild(scriptHtml);
+            // document.head.appendChild(scriptRes);
+            var parent = document;
+            var doc = document.getElementById('iframe');
+            if (doc){
+              parent = doc;
+            }
+            var team = parent.getElementsByClassName('card-deck-wrapper neal-team');
+            var cards = team[0].getElementsByClassName('col-md-6');
+            for(var ii =0, ln = cards.length; ii < ln; ii++){
+              cards[ii].className = cards[ii].className + " ie-fix";
+            }
+
+            var split = parent.getElementsByClassName('neal-horizontal-split-sm');
+            for(var s =0, lns = split.length; s < lns; s++){
+              var cards = split[s].getElementsByClassName('col-lg-6');
+              for(var ii =0, ln = cards.length; ii < ln; ii++){
+                cards[ii].className = cards[ii].className + " ie-fix";
+              }
+            }
+          }
+      })
+  </script>
 </html>
