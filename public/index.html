@@ -11,6 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PHP 7 Celebration</title>
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico"/>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script type="text/javascript">
+      (function () {
+        'use strict';
+
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+          var msViewportStyle = document.createElement('style')
+          msViewportStyle.appendChild(
+            document.createTextNode(
+              '@-ms-viewport{width:auto!important}'
+            )
+          )
+          document.querySelector('head').appendChild(msViewportStyle)
+        }
+      })();
+    </script>
   </head>
   <body>
     <main id="main"/>
