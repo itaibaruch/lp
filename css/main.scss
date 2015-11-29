@@ -25,11 +25,18 @@ h4, h5, h6,
     max-width: 8.33%;
 }*/
 
-.ie-fix{
+.ie-fix-6{
 	-ms-flex: none !important;
 	flex: none !important;
-    width: 50%;
-    float: left;
+  width: 50%;
+  float: left;
+}
+
+.ie-fix-4{
+  -ms-flex: none !important;
+  flex: none !important;
+  width: 30%;
+  float: left;
 }
 
 body.modal-open {
@@ -77,15 +84,18 @@ h2{
 .neal-hero .hero-7{
 	float: none;
 }
+.neal-hero .hero-7{
+  width: 9rem;
+  height: 9rem;
+  font-size: 7rem;
+  padding-left: .5rem;
+}
 .hero-7{
 	color: #6160a2; /*#7880EF;*/ /*#6160a2;*/
-	font-size: 15rem;
-    background: #ebf1fa;
-    border-radius: 50%;
-    width: 20rem;
-    height: 20rem;
-    margin: 0 auto;
-    line-height: 1.4;
+  background: #ebf1fa;
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 1.4;
 }
 .neal-hero img{
 	max-height: 20rem;
@@ -311,6 +321,8 @@ footer .img-footer img{
     height: 10rem;
     font-size: 7.5rem;
     margin-top: 4rem;
+    font-size: 15rem;
+    padding: 0;
 	}
 	.neal-hero .hero-text{
 		float: left;

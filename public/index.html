@@ -7,11 +7,23 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://cask.scotch.io/bootstrap-4.0.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cask.scotch.io/bootstrap-4.0.css" /> -->
 
     <title>PHP 7 Celebration</title>
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico"/>
+    <meta content="We want to celebrate the arrival of PHP 7.0, learn more about it, offer a chance to talk with other PHP developers, and enjoy that PHP is still going strong after more than 20 years." name="description" />
+    <meta content="8bitrockstars, 8 bit rockstars, 8 bitrockstars, nfq asia, php, php7, ho chi minh city" name="keywords" />
+    <!-- OpenGraph meta data -->
+    <meta content="PHP 7 Celebration in Vietnam Powered by 8 Bit Rockstars" property="og:title" />
+    <meta content="http://8bitrockr.com/php7" property="og:url" />
+    <meta content="http://8bitrockr.com/img/logo_w.png" property="og:image" />
+    <meta content="We want to celebrate the arrival of PHP 7.0, learn more about it, offer a chance to talk with other PHP developers, and enjoy that PHP is still going strong after more than 20 years." property="og:description" />
+    <!-- Twitter meta data -->
+    <meta content="PHP 7 Celebration in Vietnam Powered by 8 Bit Rockstars" property="twitter:title" />
+    <meta content="http://8bitrockr.com/php7" property="twitter:url" />
+    <meta content="http://8bitrockr.com/img/logo_w.png" property="twitter:image" />
+    <meta content="We want to celebrate the arrival of PHP 7.0, learn more about it, offer a chance to talk with other PHP developers, and enjoy that PHP is still going strong after more than 20 years." property="twitter:description" />
 
     <!-- font -->
     <link rel="stylesheet" href="css/upheavtt.css">
@@ -58,6 +70,8 @@
 
           var isIE11 = !!(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv[ :]11/));
 
+
+          // TODO: change to something more elegent 
           if(isIE11){
             // console.log('ie11');
             // var scriptHtml = document.createElement("script");
@@ -78,16 +92,25 @@
             var team = parent.getElementsByClassName('card-deck-wrapper neal-team');
             var cards = team[0].getElementsByClassName('col-md-6');
             for(var ii =0, ln = cards.length; ii < ln; ii++){
-              cards[ii].className = cards[ii].className + " ie-fix";
+              cards[ii].className = cards[ii].className + " ie-fix-6";
             }
 
             var split = parent.getElementsByClassName('neal-horizontal-split-sm');
             for(var s =0, lns = split.length; s < lns; s++){
               var cards = split[s].getElementsByClassName('col-lg-6');
               for(var ii =0, ln = cards.length; ii < ln; ii++){
-                cards[ii].className = cards[ii].className + " ie-fix";
+                cards[ii].className = cards[ii].className + " ie-fix-6";
               }
             }
+
+            var form = parent.getElementsByClassName('neal-signup-inline');
+            for(var s =0, lns = form.length; s < lns; s++){
+              var cards = form[s].getElementsByClassName('col-lg-4');
+              for(var ii =0, ln = cards.length; ii < ln; ii++){
+                cards[ii].className = cards[ii].className + " ie-fix-4";
+              }
+            }
+            
           }
       })
   </script>
