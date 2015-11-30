@@ -153,7 +153,7 @@ export default (props) => {
       
       <Section className="gray">
         <h2 className="text-center" id="sign-up">Sign up</h2>
-        <p>Please fill your details, and we will contact you back with confermation. </p>
+        <p>Please fill your details, and we will contact you back with confirmation. </p>
         <SignupInline onSubmit={onSignup}/>
         <AlertModal modalId="alert-modal" onSubmit={onClosePopup}/>
       </Section>
