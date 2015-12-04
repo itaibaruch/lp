@@ -75,7 +75,7 @@ export class AlertModal extends React.Component {
               <ModalHeader title={this.props.title}/>
               <form className="form-vertical" onSubmit={this.handleSubmit}>
               <div className="modal-body">
-                Thank for registrating, you will receive an email with confirmation soon.
+                Thank for registering, we are looking forward seeing you at the checking counter on the event day 19/12/2015.
               </div>
               <ModalFooter buttonText={this.props.buttonText} />
               </form>
